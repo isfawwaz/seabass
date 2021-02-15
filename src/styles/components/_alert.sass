@@ -1,0 +1,65 @@
+.sb-alert
+    position: relative
+    overflow: hidden
+    padding-top: rem(32px)
+    padding-bottom: rem(32px)
+
+    .sb-alert__container
+        position: relative
+        z-index: 1
+        padding-left: rem(32px)
+        padding-right: rem(32px)
+        display: flex
+        align-items: center
+        color: $colorPrimary
+
+        .sb-alert__svg, .sb-alert__svg-prepend
+            width: rem(150px)
+            height: rem(150px)
+        
+        .sb-alert__svg
+            margin-right: rem(32px)
+
+        .sb-alert__svg-prepend
+            margin-left: rem(32px)
+
+        .sb-alert__title
+            margin: 0
+
+        .sb-alert__description
+            margin: 0
+            font-weight: bold
+            color: $colorPrimary
+            font-size: rem(16px)
+
+    .sb-alert__background
+        position: absolute
+        z-index: 0
+        top: 50%
+        transform: translateY(-50%)
+        width: 100%
+        height: calc(100% - 64px)
+        background-color: $colorAccentLight
+        border-radius: rem(24px)
+
+@include media-breakpoint-down(md)
+    .sb-alert
+        margin-bottom: rem(16px)
+        
+        .sb-alert__container
+            color: white
+
+            .sb-alert__svg, .sb-alert__svg-prepend
+                display: none
+
+            .sb-alert__title
+                font-size: rem(24px)
+
+            .sb-alert__description
+                color: white
+                font-size: rem(14px)
+
+        .sb-alert__background
+            height: 100%
+            height: calc(100% - 32px)
+            background-color: $colorPrimary

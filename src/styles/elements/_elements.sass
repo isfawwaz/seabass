@@ -7,6 +7,10 @@ hr
     height: 1px
     margin-bottom: 1.5rem
 
+main
+    // background-color: #f4f7f8
+    padding: 0 0 rem(32px)
+
 @import lists
 
 img
@@ -17,3 +21,7 @@ figure
     margin: 1rem 0
 
 @import table
+
+@include media-breakpoint-down(sm)
+    main
+        padding-top: rem(32px)

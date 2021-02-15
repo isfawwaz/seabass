@@ -19,22 +19,22 @@ const getters = {}
 
 // Actions
 const actions = {
-    async getData({ commit }, filter) {
-        commit('ui/dataUnLoaded');
-        commit('ui/startLoadingData');
+    async getData({ commit, dispatch }, filter) {
+        dispatch('ui/dataUnLoaded', null, { root: true });
+        dispatch('ui/startLoadingData', null, { root: true });
         commit('loadMain', filter);
-        commit('ui/finishLoadingData');
-        commit('ui/dataLoaded');
+        dispatch('ui/finishLoadingData', null, { root: true });
+        dispatch('ui/dataLoaded', null, { root: true });
     },
 
-    async getAreas({ commit }) {
-        commit('ui/provinceUnLoaded');
-        commit('ui/cityUnLoaded');
-        commit('ui/startAreaLoding');
+    async getAreas({ commit, dispatch }) {
+        dispatch('ui/provinceUnLoaded', null, { root: true });
+        dispatch('ui/cityUnLoaded', null, { root: true });
+        dispatch('ui/startAreaLoding', null, { root: true });
         commit('loadArea');
-        commit('ui/finishAreaLoading');
-        commit('ui/provinceLoaded');
-        commit('ui/cityUnLoaded');
+        dispatch('ui/finishAreaLoading', null, { root: true });
+        dispatch('ui/provinceLoaded', null, { root: true });
+        dispatch('ui/cityUnLoaded', null, { root: true });
     },
 
     async getSizes({ commit, dispatch }) {
@@ -50,8 +50,8 @@ const actions = {
 const mutations = {
     async loadMain(state, filter) {
         await api.get("list", filter).then( (items) => {
-            state.fishes = [];
-            state.fishes.push( items );
+            let newItems = items.filter((item) => item.uuid !== null );
+            state.fishes = newItems;
         });
     },
 

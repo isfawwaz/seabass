@@ -1,0 +1,34 @@
+.vs-table__header
+    background: transparent
+    padding-left: rem(0px)
+    padding-right: rem(0px)
+
+.vs-table__th
+    padding: rem(14px) rem(20px)
+
+.vs-table__header
+    &~ .vs-table .vs-table__th
+        &:first-child
+            border-radius: rem(14px) rem(0px) rem(0px) rem(14px)
+        &:last-child
+            border-radius: rem(0px) rem(14px) rem(14px) rem(0px)
+
+.vs-table__footer
+    margin-top: rem(16px)
+    border-radius: rem(14px)
+
+.icon
+    width: rem(40px)
+    height: rem(40px)
+
+@include media-breakpoint-down(sm)
+    .vs-table
+        table
+            min-width: unset
+        &:first-of-type 
+            .vs-table__td
+                &:last-child
+                    width: 5%
+    .icon
+        width: rem(32px)
+        height: rem(32px)

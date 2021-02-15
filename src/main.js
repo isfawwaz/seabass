@@ -4,14 +4,20 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import Vuesax from "vuesax";
-
-import "vuesax/dist/vuesax.css";
+import LottieAnimation from "lottie-vuejs/src/LottieAnimation.vue";
+import responsive from "vue-responsive";
 
 Vue.config.productionTip = false;
 
 Vue.use(Vuesax, {
-  primary: "#2ab796"
+  colors: {
+    primary: "#2ab796"
+  }
 });
+
+Vue.use(LottieAnimation);
+
+Vue.use(responsive);
 
 new Vue({
   router,

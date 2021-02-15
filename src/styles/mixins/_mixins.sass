@@ -1,0 +1,5 @@
+@function stripUnit($value)
+    @return $value / ($value * 0 + 1)
+
+@function rem($pixel, $unit: 16px)
+    @return #{stripUnit($pixel) / stripUnit($unit)}rem
