@@ -9,7 +9,9 @@ import "vuesax/dist/vuesax.css";
 
 Vue.config.productionTip = false;
 
-Vue.use(Vuesax, {});
+Vue.use(Vuesax, {
+  primary: "#2ab796"
+});
 
 new Vue({
   router,
