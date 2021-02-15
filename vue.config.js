@@ -2,7 +2,7 @@ module.exports = {
     pwa: {
         name: 'eFishery Seabass',
         themeColor: '#2ab796',
-        msTileColor: '#FFFFFF',
+        msTileColor: '#2ab796',
         appleMobileWebAppCapable: 'yes',
         appleMobileWebAppStatusBarStyle: 'black',
 
